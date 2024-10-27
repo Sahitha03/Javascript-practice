@@ -1,0 +1,1349 @@
+                        Javascript
+                       -------------
+Javascript is a programming language.
+REPL-Read,Evaluate,Print,loop
+
+Variables
+----------
+It is simply the name of the storage location.
+
+Data types 
+----------
+1)Number
+2)String
+3)boolean
+4)Undefined(A variable that has not been assigned a value is of type undefined)
+5)null(The null value represents the intentional absence of any object value)
+6)Bigint
+7)symbol
+
+Operations
+----------
++,-,*,/,%
+
+** - power operator
+
+NaN 
+-----
+The NaN is a global property that  represents not Not-A-Number
+
+0/0
+NaN-1
+NaN*1
+NaN+NaN
+
+Operator Presedence
+-------------------
+()
+**
+*,/,%
++,-
+
+Keywords(reserved words)
+--------
+1)let 
+2)const(fixed,doesn't change)
+3)var(old syntax for writing variables)
+
+To comment
+----------
+//
+
+Operators
+---------
+1)Arithmetic operators(+,-,/,%,**)
+age=age+1 (or) age+=1;
+age=age-1 (or) age-=1;
+age=age*2 (or) age*=2;
+age=age/3 (or) age/=3;
+
+2)Unary operators(increment,decrement)
+age++; (or) age=age+1;
+age--; (or) age=age-1;
+
+Pre-increment - ++age   (change,then use)
+Post-increment - age++  (use,then change)
+
+Pre-decrement - --age
+Post-decrement - age--
+
+3)Comparison operators
+   >,<,>=,<=,!=,==
+  eg:
+    5=='5' 
+    o/p:true    (Compares values and negelects type of the value)
+
+-------
+|Note:|
+ -----
+  ==  Compares the value irresepective of type
+  
+  === Compares both the value and the type of the value.
+4)Logical operators
+
+Identifier Rules
+----------------
+All javascript variables must be identified with unique names
+
+1)Nmaes can contain letters,digits,underscores,and dollar signs.(no space)
+2)Names must begin with letters
+3)Names can also begin with $ and _
+4)Names are case sensitive(y and Y are different variables)
+5)Reserved words(javascript keywords) cannot be used as variable names.
+
+
+Ways of writing identifiers
+---------------------------
+1)camelCase (e.g - fullName)   (Mostly used JS Name convention)
+2)snake_case (e.g - full_name)
+3)PascalCase (e.g - FullName)
+
+
+In javascript changing of type is allowedans simple
+
+ex:
+    let age=10;
+
+    age
+    10
+    
+    age=false;
+    
+    age
+    false
+
+Typescript
+-----------
+It is a next version of javascript
+
+typescript-static typed(fixed)
+javascript-dynamic typed(can be change)
+
+In typescript,changing of data type is not allowed.
+
+Ex:let a=10;
+   now the value of a is 10.
+
+   a=false;
+After writing the above statement it gives error in typescript but                                                                                              whereas in javascript it is allowed.
+
+
+String in JS
+------------
+String are represented with '' (or) ""
+
+ex:
+   let name='shradha';
+   let name="Aman";
+   let empty="";
+
+let st='this is "apple"'
+let st="this is 'apple'"
+let st="this is "apple"" (gives error)
+let st='this is 'apple'' (gives error)
+
+   -String Indices
+   
+    let name="Tony Stark"
+    
+    T o n y   S t a r k
+    - - - - - - - - - -
+    0 1 2 3 4 5 6 7 8 9
+
+   name[0] - T
+   name[1] - o
+   name[2] - n
+   .
+   .
+   .
+
+  If we give name[1000] - undefined
+    
+   name.length gives the length.
+ 
+ -Conacatenation
+
+  "tony"+" "+"Stark"
+   
+  "tony"+1  - tony1
+
+  Methods
+  -------
+ 1)trim()-remove white spaces in the string which are at both ends.
+Strings are immutable,no changes can be made tos trings.Whenever we do try to make a change,a new string is created and old remains same.
+2)toUpperCase()
+3)toLowerCase()
+4)indexOf - return the index of first occurence of some value in string or gives -1 if not found.
+5)slice() - returns the part of original string as a new string.
+   ex: let msg="Ilovecoding"
+       msg.slice(5)  //coding
+       msg.slice(1,5) //love   last index is not included.
+       msg.slice(-num)=str.slice(length-num)
+6)replace()
+
+   ex:
+       to replace msg.replace("love","do") //Idocoding   Replace only first occurence
+7)repeat()  Returns a string with the no.of copies of a string.
+   ex:let str="mango"
+   str.repeat(3)    //"mangomangomango"
+
+Method chaining
+---------------
+Using one method after another method,the order of execution will be from left to right.
+ ex:
+     msg="       hi           "
+     console.log(msg.trim().toUpperCase())
+  o/p: HI
+
+
+Unicodes in JS
+--------------
+'a'-61 'b'-62 ...........
+ 
+'A'-41 'B'-62 ...........
+
+Conditional Statements
+-----------------------
+1)if-else
+2)nested if-else
+3)switch
+
+
+truthy & falsy
+--------------
+Everything in JS can be expressesd in terms of truth of false
+falsy values:
+
+false,0,-0,On(BigInt value),""(empty string),null,undefined,NaN
+
+truthy values:
+
+Everything except falsy values
+
+if(0)
+{
+  console.log("It has true value");
+}
+else
+{
+  console.log("It has false value");
+}
+
+if('sahitha')
+{
+  console.log("It has true value");
+}
+else
+{
+  console.log("It has false value");
+}
+
+
+Arrays
+-------
+students=["Aman","Shradha","Rajat"]
+In JS there is no need to store similar type of data in an array.
+ ex: student=[31721,"Sahitha",9.5]
+
+Array methods
+--------------
+push:add to end
+pop:delete from end and returns it.
+shift:delete from start and returns it.
+unshift:add to start
+indexOf():returns index of something
+includes:search for a value
+concat():merge two arrays
+         
+     ex:There are two arrays first and second
+      To concatinate two arrays first.concat(second);
+reverse():To reverse the array.
+slice():Copies a potion of an array.
+splice():removes/replaces/add elements in place
+    ex:splice(start,end,item0....itemN)
+splice makes changes in original array
+sort():Used to sort the array ina ascending order
+
+    Note:While sorting the number array it will not sort the number it treats number as string and according to that it will sort.
+          ex:
+              let nums=[9,25,4,1,36,49];
+              nums.sort()     //[1,25,36,4,49,9]
+
+Arrays references
+-----------------
+[2,3]==[2,3]   //false  because both have different locations in memory
+
+[2,3]===[2,3]  //false
+
+
+arr1=[2,3];
+arr2=arr1;
+
+arr1==arr2 //true
+
+arr1===arr2 //true
+
+
+If we make change in arr2 then that change was reflected in arr1 also.
+
+Constant arrys
+--------------
+In constant arrays we can push pop and can perform every operation on elements in the cars.
+
+Constant arrays means the array reference is constant.
+
+ ex:1
+------
+const arr=[1,2,3];
+
+arr=[1,2,3]  //gives error
+
+arr=[1,2] gives error
+
+ex:2
+-----
+arr=[1,2,3]
+arr2=[1,2,3]
+arr=arr2 //gives error
+
+arr3=[4,5]
+arr=arr3; //gives error
+
+arr4=arr;   //doesn't give error
+
+
+Multidimensional arrays (nested arrays)
+--------------------------------------
+let nums=[[2,4],[6,8],[9,10]]
+
+ 2 4
+
+ 6 8
+
+ 9 10
+
+Loops
+-----
+Used to iterate a piece of code.
+
+for loops
+----------
+
+for(let i=1;i<=5;i++)
+{
+  console.log(i);
+}
+
+while loops
+------------
+while(condition)
+{
+  //do something
+}
+let i=1;
+while(i<=5)
+{
+  console.log(i);
+  i++;
+}
+Nested loops
+------------
+for(let i=1;i<=3;i++)
+{
+  for(let j=1;j<=3;j++)
+  {
+    console.log(j);
+  }
+}
+
+break keyword
+-------------
+To get us out of the loop
+
+for of loops
+------------
+for(element of collection)
+{
+  //do something
+}
+for(fruit of fruits)
+{
+  console.log(fruit);
+}
+
+Nested for of loop
+------------------
+let heroes=[["superman","batman","wonder woman"],["spiderman","ironman","thor"]];
+for(list of heroes)
+{
+  console.log(list);
+  for(hero of list)
+   {
+    console.log(hero);
+   }
+}
+
+Object literals
+---------------
+Used to store keyed collections and complex entities.
+propert-> (key,value) pair
+Objects are collection of properties.
+ ex1:
+     let student={
+    name:"Shradha",
+    age:23,
+    marks:99,
+    cgpa:9.5
+};
+
+ ex2:const item={
+    price:100.99,
+    discount:50,
+    colors:["red","pink"]
+};
+
+ex3:
+    const post={
+  username:"@shradhakapra",
+  content:"This is my #firstpost",
+  likes:50,
+  reposts:5,
+  tags:["@apnacollege","delta","aman"]
+};
+
+To access from the object
+-------------------------
+post["likes"] (or) post.likes
+
+let prop="reposts"
+
+post[prop] //5
+
+GetValues
+---------
+JS automatically converts object keys to strings
+
+Even if we made the number as key,the number will be converted to string.
+
+Add/Update Value
+----------------
+const student={
+  name:"shradha",
+  age:23,
+  marks:94.4,
+  city:"Delhi"
+};
+//Change the city to "Mumbai"
+   student.city="Mumbai"
+
+//Add a new property,gender:"Female"
+   student.gender="Female"
+
+//Change the marks to "A"
+   student.marks="A"
+
+//To delete
+ delete obj.key
+
+Object of Objects
+----------------
+const classInfo={
+    aman:
+    {
+        grade:"A",
+        city:"Delhi"
+    },
+    shradha:{
+        grade:"A+",
+        city:"Mumbai"
+    },
+    karan:
+    {
+        grade:"B",
+        city:"Pune"
+    }
+};
+
+classInfo.aman
+classInfo.shradha
+classInfo.aman.city
+classInfo.shradha.grade
+
+Array of Objects
+----------------
+const classi=[
+    {
+        name:"aman",
+        grade:"A+",
+        city:"Delhi"
+    },
+    {
+        name:"shradha",
+        grade:"A",
+        city:"Pune"
+    },
+    {
+        name:"karan",
+        grade:"O",
+        city:"Mumbai"
+    }
+
+];
+
+classi
+classi[0]
+classi[1]
+classi[0].name
+class[1].grade
+
+Functions in JS
+----------------
+
+function funcName()
+{
+  //do something
+}
+ ex:function hello()
+{ 
+  console.log("hello");
+}
+
+hello();  //call the function to use that function
+
+Functions with Arguements
+-------------------------
+function funcName(arg1,arg2)
+{
+  //do something
+}
+
+return keyword
+--------------
+return keyword is used to return some value from the function.
+
+Function Expression
+-------------------
+const sum=function(a,b)
+{
+  return a+b;
+}
+sum(2,3);
+
+High Order Functions
+--------------------
+A function that does one or both:
+
+1)takes one or multiple functions as arguments
+
+2)returns a function
+
+ex: function multipleGreet(func,n)
+{
+    for(let i=1;i<=n;i++)
+    {
+        func();
+    }
+}
+let gree=function()
+{
+    console.log("hello");
+}
+multipleGreet(gree,10);
+
+this keyword
+------------
+"this" keyword refers to an object that is executing current piece of code.
+
+const stud={
+   name:"shradha",
+   age:23,
+   eng:95,
+   math:93,
+   phy:97,
+   getAvg(){
+    console.log(this);
+    let avg=(this.eng+this.math+this.phy)/3;
+    console.log(`${this.name} got average marks ${avg}`);
+   }
+};
+
+try & catch
+-----------
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed,if an error occurs in the try block.
+
+try{
+    console.log(a);
+}
+catch(err){
+    console.log("Caught an error! a is not defined");
+    console.log(err);
+}
+console.log("hello1");
+console.log("hello1");
+
+Arrow functions
+---------------
+const func=(arg1,arg2...)=>{function definition}
+
+const sum=(a,b)=>{
+  console.log(a+b);
+}
+
+Implicit return in Arrow Functions
+----------------------------------
+const func=(arg1,arg2..)=>(value)
+
+const mul=(a,b)=>
+(
+   a*b;
+);
+
+
+setTimeout
+------------
+setTimeout(function,timeout)  //in-built function
+
+console.log("Hi there");      //time is in milliseconds
+setTimeout(()=>{
+  console.log("Apna College");
+},4000);
+console.log("Welocme to")
+
+setInterval
+-----------
+setInterval(function,time)  //in-built function
+
+setInterval(()=>
+{
+    console.log("Apna College");  //Apna college will be printed with a time interval of 2 seconds.
+},2000);
+
+ex:2
+  let id1=setInterval(()=>
+{
+  console.log("Aman");
+},3000);
+console.log(id1);
+let id2=setInterval(()=>
+{
+    console.log("Apna College");
+},2000);
+console.log(id2);
+//to clear
+clearInterval(id1);
+clearInterval(id2);
+
+//For each loop
+let arr=[1,2,3,4,5];
+let print=function(el)
+{
+    console.log(el);
+}
+arr.forEach(print);
+arr.forEach(function(el)
+{
+    console.log(el);
+});
+arr.forEach((el)=>
+{
+ console.log(el);
+});
+//array of objects
+let s=[{
+        name:"aman",
+        marks:94,
+       },
+       {
+         name:"shardha",
+         marks:95,
+       },
+       {
+           name:"rajat",
+           marks:92,
+       },
+];
+s.forEach((student)=>
+{
+   console.log(student);
+});
+let gpa=s.map((stu)=>
+{
+   return stu.marks/10;
+});
+
+//map function
+let num=[1,2,3,4,5];
+let double=num.map((el)=>{
+    return el*el;
+}
+);
+//filter function
+let nums=[2,4,1,5,6,2,7,8,9];
+let even=nums.filter((num)=>
+{
+    return num%2==0; //even->true,odd->false
+});
+//every method
+//Returns true if every element of array gives true for some function.Else returns false.
+//like logical and
+[1,2,3,4].every((el)=>el%2==0);
+
+//some method
+//like logical or
+[1,2,3,4].some((el)=>el%2==0);
+
+//reduce method
+//Reduces the array to single value
+//arr.reduce(reducer function with 2 variables for(accumulator,element));
+let ans=[1,2,3,4].reduce((res,el)=>(res+el));
+console.log(ans);
+//maximum using reduce function
+let max=[7,9,0,8,4].reduce((mx,el)=>
+{
+    if(el>mx)
+    {
+        return el;
+    }
+    else
+    {
+      return mx;
+    }
+}
+);
+console.log(max);
+//check all numvbers in array are multiples of 10 or not.
+let sol=[10,20,30].every((el)=>{
+    return el%10==0;
+});
+console.log(sol);
+//Default parameters
+function func(a,b=2)
+{
+    //do something
+}
+function sum(a=1,b)
+{
+    return a+b;
+}
+sum(2);
+sum(1,3);
+sum(1); //it takes as a=1 and b=undefined; //gives output as NaN
+
+//Spread
+//Expands an iterable into multiple values
+function func(...arr)
+{
+    //do something
+}
+//minimum using spread function
+
+console.log(Math.min(...arr));
+let college="apna college";
+console.log(...college);  //a p n a   c o l l e g e
+
+//Spread with array literals
+let n=[1,2,3,4,5];
+let newarr=[...n];//makes copy of the above array
+console.log(newarr);
+
+let e=[2,4,6,8,10];
+let o=[1,3,5,7,9];
+let c=[...e,...o];
+
+//Spread with object literals
+let data={
+    email:"shradhakapra@gmail.com",
+    name:"sharadha"
+};
+const datacopy={...data,name:"aman",country:"India"};
+let a=[1,2,3,4,5];
+const ob={...a}; //array elements are stored in object as 
+                   //{0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
+//Rest 
+//Allows a function to take an indefinite number of arguments and bundle them in ana array
+/*function sum(...args)
+{
+    return args.reduce((add,el)=>add++el);
+}*/
+function total(...args)//arguments
+{
+   for(let i=0;i<args.length;i++)
+   {
+    console.log(`U gave us :${args[i]}`);
+   }
+}
+function min(a,b,c,d)
+{
+    console.log(arguments); //arguments is a collection it is not an array
+}
+//sum
+function sumtot(...args)
+{
+    return args.reduce((sum,el)=>{
+        return sum+el;
+    });
+}
+//min
+function small(...args)
+{
+    return args.reduce((min,el)=>
+    {
+        if(el<min)
+        {
+            return el;
+        }
+        else
+        {
+            return min;
+        }
+    });
+}
+//Destructing
+//storing values of array into multiple variables
+let names=["tony","bruce","steve","peter"];
+let[winner,runnerup,...others]=names;
+console.log(winner,runnerup);  //tony bruce
+console.log(others);
+//Destructing objects
+const child={
+    name:"aman",
+    age:24,
+    class:9,
+    subjects:["eng","hindi","maths"],
+    username:"karan@123",
+    password:"abcd"
+};
+/*let username=child.username;
+let pass=child.password;*/
+//let{username,password}=child;
+let{username:user,password:pass,city="tenali"}=child;
+//1st Q
+let p=[1,2,3,4,5];
+let solution=p.map((el)=>el*el);
+let an=solution.reduce((sum,el)=>sum+el);
+console.log((an)/p.length);
+//2nd Q
+let newa=p.map((el)=>el+5);
+//3Q
+let words=["hello","HI","SHRADHA","aman"];
+console.log(words.map((string)=>string.toUpperCase()));
+//4Q
+const doubleAndReturnArgs=(p,...args)=>
+[
+    ...arr,...args.map((v)=>v*2),
+]
+doubleAndReturnArgs([1,2,3],4,4);
+//5Q
+const obj1={
+    name:"aman",
+    grade:"A+",
+};
+const obj2={
+    name:"shradha",
+    grade:"A",
+};
+const merge=(obj1,obj2)=>({...obj1,...obj2});
+
+DOM
+---
+
+Selecting Elements
+-----------------
+1)getElementById
+
+Returns the element as an object or null(if not found)
+
+ex:
+---
+  document.getElementById("mainImg");
+
+2)getElementByClassName
+
+Returns the elements as an html collection or empty collection(if not found)
+
+ex:
+---
+   let smallImages=document.getElementsByClassName("oldImg");
+for(let i=0;i<smallImages.length;i++)
+{
+    console.dir(smallImages[i].src);
+}
+
+3)getElementByTagName
+
+Return the element as an HTML Collection or empty collection(if not found)
+
+document.getElementsByTagName("p");
+
+document.getElementsByTagName("p")[1];
+
+document.getElementsByTagName("p")[1].innerText
+
+
+4)Query Selectors
+  ---------------
+Allows us to use CSS selectors
+
+document.querySelector('p'); //Selects first element
+
+document.querySelector('#myId'); //Selects first element with id=myid
+
+document.querySelector('.myClass'); //selects first element with class=myclass
+
+document.querySelectorAll("p") //Selects all p elemets
+
+ex:
+    console.dir(document.querySelector("h1"));
+    console.dir(document.querySelector("#description"));
+    console.dir(document.querySelector(".oldImg"));
+    console.dir(document.querySelector("div a"));
+    console.dir(document.querySelectorAll("div a"));
+
+
+Manipulating Attributes
+-----------------------
+obj.getAttribute(attr);
+
+obj.setAttribute(attr,val);
+
+let links=document.querySelectorAll(".box a");
+for(let i=0;i<links.length;i++)
+{
+   links[i].style.color="purple";
+}
+
+There is CSS for box class in style.css
+
+That css is:
+
+.box {
+  border: 0.25px solid black;
+  background-color: lightgray;
+  width: 200px;
+  padding: 1rem;
+}
+
+But in console when i write
+ 
+let box=document.querySelector(".box");
+box.style;
+
+It gives the properties of style
+
+This border,backgroundcolor,width,padding will be like this
+
+backgroundColor:""
+border:""
+width:""
+padding:""
+
+If I add inline styling in the html page,then the properies will be visible in the console
+
+Using querySelector we are styling and this styling is done using inline styling.
+
+Manipulating Style
+------------------
+using classList
+
+obj.classList
+
+classList.add() //to add new classes
+
+classList.remove() //to remove classes
+
+classList.contains() //to check if class exists
+
+classList.toggle() to toogle between add and remove
+
+let heading=document.querySeector("h1");
+
+I will add in my CSS like this
+
+.green{
+   color:"green";
+   text-decoration:"wavy underline black";
+}
+To add this class to heeading write
+
+heading.classList.add("green");
+
+.background{
+   background-color:"yellow";  
+}
+
+heading.classList.add("background"); //To add another class
+
+//To style we can also use setAttribute but this is not efficient as adding class using classList.add("classname")
+
+THE REASON FOR NOT USING setAttribute
+
+setAttribute("class","green");
+
+By using this,the properties of that green class will be applied to heading
+
+When I try to set properties of class background using heading.setAttribute("class","background");
+
+//The properties set by green class will be discarded.Only the properties of background class will be applied.
+
+classList.remove()
+------------------
+
+heading.classList.remove("green");
+
+classList.contains()
+--------------------
+heading.classList.contains("green"); //true
+
+classList.toggle()
+------------------
+//Acts as switch
+
+  press
+on------>off
+
+   press
+off----->on
+
+//If the class exists remove the class
+//If the class doesnot exists add the class.
+
+----------
+|Navigation|
+----------
+
+parentElement
+
+children
+
+previousElementSibling/nextElementSibling
+
+
+
+
+DOM Events
+----------
+
+Events are signals that something has occured.(User inputs/actions).
+
+inline events
+-------------
+<button onClick="console.log("button was clicked");">click me</button>
+
+
+onClick(when an element is clicked)
+--------
+//if there are more than 1 button
+
+let btns=document.querySelectorAll("button");
+for(btn of btns)
+{
+  btn.onClick=sayHello;
+}
+function sayHello()
+{
+  alert("Hello!");
+}
+
+onmouseenter
+------------
+let btns=document.querySelectorAll("button");
+for(btn of btns)
+{
+  btn.onClick=sayHello;
+  btn.onmouseenter=function(){
+    console.log("you enetered a button");
+  };
+}
+function sayHello()
+{
+  alert("Hello!");
+}
+
+EventListener
+-------------
+addEventListener
+
+element.addEventListener(event,callback)
+
+ex:
+--- 
+     btn.addEventListener("click",function() {
+     console.log("button clicked");
+});
+
+//callback means a function as parameter in another function.
+
+The need of EventListener
+-------------------------
+let btns=document.querySelectorAll("button");
+
+for(btn of btns)
+{
+  btn.onClick=sayHello;
+  btn.onClick=sayNmae;
+}
+
+function sayHello(){
+console.log("Hello!");
+}
+
+function sayName(){
+console.log("Apna College");
+}
+
+//If I execute the above program,whenever a button is clicked "Apna college" is only displayed in console.
+When we are calling multiple functions only last will executed.
+
+//To overcome this we use EvenetListener 
+
+let btns=document.querySelectorAll("button");
+
+for(btn of btns)
+{
+  btn.addEventListener("click",sayHello);
+  btn.addEventListener("click",sayName);
+}
+
+this in EventListeners
+-----------------------
+When 'this' is used in a callback of event handler of something,it refers to that something.
+
+let btn=document.querySelector("button");
+btn.addEventListener("click",function(){
+console.log(this);
+});
+//<button>Click me!</button>
+
+let btn=document.querySelector("button");
+btn.addEventListener("click",function(){
+console.dir(this);
+});
+
+let btn=document.querySelector("button");
+let p=document.querySelector("p");
+let h1=document.querySelector("h1");
+let h2=document.querySelector("h2");
+btn.addEventListener("click",function()
+{
+   console.dir(this.innerHTML);
+   this.style.backgroundColor="blue";
+});
+
+
+-----------------------
+
+btn.addEventListener("click",function()
+{
+   console.dir(this.innerHTML);
+   this.style.backgroundColor="blue";
+});
+
+h1.addEventListener("click",function()
+{
+   console.dir(this.innerHTML);
+   this.style.backgroundColor="blue";
+});
+
+h2.addEventListener("click",function()
+{
+   console.dir(this.innerHTML);
+   this.style.backgroundColor="blue";
+});
+
+p.addEventListener("click",function()
+{
+   console.dir(this.innerHTML);
+   this.style.backgroundColor="blue";
+});
+
+Instead of the above
+
+btn.addEventListener("click",thisun);
+h1.addEventListener("click",thisun);
+h2.addEventListener("click",thisun);
+p.addEventListener("click",thisun);
+
+function thiun(){
+  console.dir(this.innerHTML);
+  this.style.backgroundColor="blue";
+
+}
+
+
+Keyboard events
+---------------
+let inp=document.querySelector("input");
+inp.addEventListener("keydown",function(){
+  
+  console.log("Key was pressed");
+});
+
+
+inp.addEventListener("keydown",function(event){
+  console.log(event);                   //gives the event(keyboardEvent)
+  console.log("Key was pressed");    
+});
+
+inp.addEventListener("keyup",function(event){
+  console.log(event.key);
+  console.log(event.code);
+  console.log("Key was pressed");
+});
+
+ex:if character is "a" then code:keyA and key:a
+
+let inp=document.querySelector("input");
+inp.addEventListener("keydown",function(event)
+{
+    console.log(`Eventcode:${event.code}`);
+    if(event.code=="KeyU")
+    {
+        console.log("Arrow is moved upwards");
+    }
+    else if(event.code=="KeyD")
+    {
+        console.log("Arrow is moved downwards");
+    }
+    else if(event.code=="KeyR")
+    {
+        console.log("Arrow is moved towards right");
+    }
+    else if(event.code=="KeyL")
+    {
+        console.log("Arrow is moved towards left");
+    }
+});
+
+Form Events
+-----------
+let frm=document.querySelector("form");
+frm.addEventListener("submit",function(){
+    console.log("form was submitted");
+    alert("Form was submitted");
+});
+
+let frm=document.querySelector("form");
+frm.addEventListener("submit",function(event){
+    event.preventDefault();
+    console.log(event);
+});
+
+Note:event.preventDefault() prevents from not to going to action url when the form is submitted.
+
+Extracting Form Data
+--------------------
+
+let frm=document.querySelector("form");
+let user=document.querySelector("#user");
+let pass=document.querySelector("#pass");
+frm.addEventListener("submit",function(event){
+event.preventDefault();
+console.log(user.innerText); //Nothing will be printed
+console.log(pass.innerText); //Nothing will be printed
+});
+
+Note:Beacuse whatever we enter in the placeholders it is stored in "value" property of object.
+
+Indirect accessing of extracting form data
+------------------------------------------
+"elements" is a propert of the form object
+
+let frm=document.querySelector("form");
+console.dir(frm);
+frm.addEventListener("submit",function(event){
+    event.preventDefault();
+    console.log(this.elements[0].value); //form.elements[0];
+    console.log(this.elements[1].value);
+});
+
+More Events
+-----------
+
+1)change event:
+               The change event occurs when the value of an element has been changed(only works on <input>,<textarea> and <select> elements).
+
+     ex:
+            let form=document.querySelector("form");
+           form.addEventListener("submit",function(event){
+           event.preventDefault();
+            });
+           let user=document.querySelector("#user");
+           user.addEventListener("change",function(){
+           console.log("input changed");
+           console.log("final value",user.value);
+           });
+         
+      
+2)input event:
+              The input fires when the value of an <input>,or <textarea> element has been changed.
+
+ex:         user.addEventListener("input",function(){
+            console.log("input changed");
+            console.log("final value is",user.value);
+            });
+
+Call Stack
+----------
+
+function hello()
+{
+    console.log("inside hello function");
+    console.log("hello");
+}
+function demo()
+{
+    console.log("Calling hello function");
+    hello();
+}
+console.log("Calling demo function");
+demo();
+console.log("done,bye");
+
+function One()
+{
+    return 1;
+}
+function two()
+{
+    return One()+One();
+}
+function three()
+{
+    let ans=two()+One();
+    console.log(ans);
+}
+three();
+
+JS is Single threaded
+----------------------
+It can do a single task at a time and cannot perform multiple tasks at same time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
